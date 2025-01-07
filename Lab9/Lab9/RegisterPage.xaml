@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Lab9.ViewModel"
+             x:Class="Lab9.RegisterPage">
+
+    <ContentPage.BindingContext>
+        <local:RegisterViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Register"
+                   FontSize="Title"
+                   HeightRequest="200"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"/>
+
+            <Frame Padding="10" Margin="10,10,10,10">
+                <StackLayout>
+                    <Editor Placeholder="Email" Text="{Binding UserName}"/>
+                    <Editor Placeholder="Password" Text="{Binding PassWord}"/>
+                    <Editor Placeholder="ConfirmPassword" />
+                    <Button CornerRadius="10" Text="Register" Command="{Binding Register}" Clicked="Register"/>
+                    <Button CornerRadius="10" Text="Back" Command="{Binding Back}" Clicked="Back"/>
+                    <Label Text="{Binding ShowOutput}" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
